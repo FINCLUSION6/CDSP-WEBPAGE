@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crypto Adoption & Migration Analysis — Group 12</title>
+    <meta name="description" content="Neon, blockchain-themed presentation of Group 12's findings on crypto adoption and international migration." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <nav>
+        <div class="nav-wrap">
+            <div class="brand">
+                <svg width="28" height="28" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="36" cy="36" r="30" stroke="url(#g1)" stroke-width="3"/>
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="72" y2="72">
+              <stop stop-color="#00D1FF"/>
+              <stop offset="1" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+                <strong>Group 12</strong>
+                <span class="chip">MIT Emerging Talent</span>
+            </div>
+            <div class="nav-links">
+                <a href="#problem">The Problem</a>
+                <a href="#research">Our Research</a>
+                <a href="#results">Key Findings</a>
+                <a href="#implications">What This Means</a>
+                <a href="#next-steps">Next Steps</a>
+                <a href="#team">Our Team</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <svg class="mesh" viewBox="0 0 1200 500" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wire" x1="0" x2="1">
+          <stop offset="0%" stop-color="#00d1ff" stop-opacity=".45"/>
+          <stop offset="100%" stop-color="#3b82f6" stop-opacity=".45"/>
+        </linearGradient>
+      </defs>
+      <!-- Stylized blockchain network -->
+      <g stroke="url(#wire)" stroke-width="1.2">
+        <path d="M0,360 C200,300 350,430 550,360 C760,285 980,400 1200,340" fill="none"/>
+        <path d="M0,260 C210,200 340,310 550,260 C770,210 980,300 1200,260" fill="none"/>
+        <path d="M0,160 C220,120 360,190 560,160 C790,125 990,200 1200,180" fill="none"/>
+      </g>
+      <g fill="#00d1ff" opacity=".7">
+        <circle cx="180" cy="255" r="3"/>
+        <circle cx="420" cy="210" r="3"/>
+        <circle cx="700" cy="235" r="3"/>
+        <circle cx="980" cy="210" r="3"/>
+      </g>
+    </svg>
+        <div class="container">
+            <span class="badge">Blockchain Research • Financial Inclusion</span>
+            <h1 class="title neon-text">Can Blockchain Help Migrants Access Banking?</h1>
+            <p class="subtitle">Exploring how cryptocurrency adoption relates to international migration patterns and whether blockchain technology could provide financial services to underserved populations.</p>
+            <div class="cta-row">
+                <a class="btn" href="#results">See Our Findings</a>
+                <a class="btn ghost" href="#problem">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. THE PROBLEM -->
+        <section id="problem">
+            <div class="container">
+                <h2>The Challenge: Financial Exclusion of Migrants</h2>
+                <div class="grid cols-2">
+                    <div class="panel">
+                        <h3>Why This Matters</h3>
+                        <p>Millions of migrants and refugees around the world cannot access basic banking services. Without bank accounts, credit history, or formal identification, they are locked out of the financial system.</p>
+
+                        <p>This exclusion affects their ability to:</p>
+                        <ul>
+                            <li>Send money to family back home</li>
+                            <li>Build credit for loans or housing</li>
+                            <li>Access insurance and other financial services</li>
+                            <li>Participate fully in their new economies</li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h3>A Potential Solution</h3>
+                        <p>Blockchain technology offers a different approach. Unlike traditional banks, blockchain-based financial systems don't require:</p>
+                        <ul>
+                            <li>Extensive paperwork or credit history</li>
+                            <li>Physical bank branches</li>
+                            <li>Government-issued ID in some cases</li>
+                            <li>High minimum balances</li>
+                        </ul>
+                        <p>But do migrants actually use cryptocurrency? And could it really help with financial inclusion?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. OUR RESEARCH QUESTION -->
+        <section id="research">
+            <div class="container">
+                <div class="panel">
+                    <h2>Our Research Question</h2>
+                    <div class="neon-text" style="font-size: 1.3em; margin: 1rem 0;">
+                        "Can blockchain-based identity and credit systems provide a viable solution to financial exclusion among migrants and refugees who lack access to traditional banking services?"
+                    </div>
+                    <p>To answer this, we investigated whether regions with more migrants show higher cryptocurrency adoption rates. If they do, it could suggest that blockchain technology is already filling gaps in traditional financial services.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HOW WE STUDIED THIS -->
+        <section id="approach">
+            <div class="container">
+                <h2>How We Studied This</h2>
+                <div class="panel">
+                    <p>To answer our research question, we looked at data from two reliable sources:</p>
+                    <div class="grid cols-2" style="margin-top: 1.5rem;">
+                        <div class="card">
+                            <h3>Cryptocurrency Usage Worldwide</h3>
+                            <p>We used rankings of how much different countries use cryptocurrency for everyday transactions (not speculation or investment).</p>
+                        </div>
+                        <div class="card">
+                            <h3>Where Migrants Live</h3>
+                            <p>We gathered UN data on international migrant populations around the world, including refugees and people seeking better opportunities.</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem;">Then we compared these patterns to see if places with more migrants also tend to use cryptocurrency more often.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. KEY FINDINGS -->
+        <section id="results">
+            <div class="container">
+                <h2>What We Discovered</h2>
+
+                <!-- The Main Finding -->
+                <div class="panel" style="margin-bottom: 2rem;">
+                    <h3 class="neon-text">Our Key Discovery</h3>
+                    <p style="font-size: 1.1em;">We found a <strong>moderate connection</strong> between areas with more migrants and higher cryptocurrency usage. This suggests that migrants may indeed be turning to digital currencies when traditional banks don't serve them well.</p>
+                </div>
+
+                <!-- Regional Patterns -->
+                <div class="grid cols-2">
+                    <div class="panel">
+                        <h3>Where Crypto is Popular</h3>
+                        <ul>
+                            <li><strong>Sub-Saharan Africa:</strong> Many people use crypto for daily transactions</li>
+                            <li><strong>Central & Southern Asia:</strong> Growing use of digital money</li>
+                            <li><strong>Latin America:</strong> Strong adoption of alternatives to traditional banking</li>
+                        </ul>
+                        <p class="muted">These areas often have limited access to traditional banks.</p>
+                    </div>
+                    <div class="panel">
+                        <h3>Where Most Migrants Live</h3>
+                        <ul>
+                            <li><strong>North America:</strong> Major destination for migrants</li>
+                            <li><strong>Western Europe:</strong> Large migrant communities</li>
+                            <li><strong>Southern Asia:</strong> Both people leaving and arriving</li>
+                        </ul>
+                        <p class="muted">These regions generally have well-established banking systems.</p>
+                    </div>
+                </div>
+
+                <!-- Why This Pattern Matters -->
+                <div class="panel" style="margin-top: 2rem;">
+                    <h3>Why This Pattern Makes Sense</h3>
+                    <p>When we looked deeper, we found that the connection between migrants and crypto use is strongest in places where traditional banking is less available. This suggests people are using cryptocurrency to fill gaps in financial services.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. WHAT THIS MEANS -->
+        <section id="implications">
+            <div class="container">
+                <h2>What This Means for Real People</h2>
+                <div class="grid cols-2">
+                    <div class="panel">
+                        <h3>The Big Picture</h3>
+                        <p>Our research suggests that <strong>blockchain technology might actually help solve financial exclusion</strong> for migrants and refugees. When traditional banks don't work for people, they're finding alternatives.</p>
+
+                        <p>This is important because it shows that:</p>
+                        <ul>
+                            <li>Migrants are already adapting and finding solutions</li>
+                            <li>Digital currencies can work where traditional banks fail</li>
+                            <li>Technology can help level the playing field</li>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <h3>Practical Benefits</h3>
+                        <p>Blockchain-based financial services could help migrants by:</p>
+                        <ul>
+                            <li><strong>Sending money home</strong> without expensive fees</li>
+                            <li><strong>Storing value safely</strong> without needing a bank account</li>
+                            <li><strong>Building financial history</strong> that isn't tied to one country</li>
+                            <li><strong>Accessing services</strong> with just a smartphone</li>
+                        </ul>
+
+                        <div class="panel" style="margin-top: 1rem; padding: 1rem; background: rgba(0, 209, 255, 0.1);">
+                            <p class="muted"><strong>Important Note:</strong> While our findings are encouraging, this is just the beginning. More research is needed to fully understand how well these solutions work in practice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. NEXT STEPS -->
+        <section id="next-steps">
+            <div class="container">
+                <h2>What Comes Next</h2>
+                <div class="panel">
+                    <p>This research is just the beginning. To really understand how blockchain can help migrants access financial services, we need to dig deeper.</p>
+                </div>
+
+                <div class="grid cols-3">
+                    <div class="card">
+                        <h3>Talk to Real People</h3>
+                        <p>We need to interview migrants, refugees, and aid organizations to understand:</p>
+                        <ul>
+                            <li>What financial challenges they actually face</li>
+                            <li>Whether they're using cryptocurrency now</li>
+                            <li>What solutions would help them most</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Study Specific Cases</h3>
+                        <p>We want to look at real examples where this is happening:</p>
+                        <ul>
+                            <li>Refugee camps using digital money</li>
+                            <li>Remittance corridors (money sent home)</li>
+                            <li>Countries with crypto-friendly policies</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Measure Real Impact</h3>
+                        <p>Most importantly, we need to find out:</p>
+                        <ul>
+                            <li>Does crypto actually improve people's lives?</li>
+                            <li>What are the risks and challenges?</li>
+                            <li>How can we make these tools safer and easier to use?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel" style="margin-top: 2rem;">
+                    <p><strong>Our Goal:</strong> To help create financial systems that work for everyone, regardless of where they come from or what documents they have.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. MEET OUR TEAM -->
+        <section id="team">
+            <div class="container">
+                <h2>Meet Our Research Team</h2>
+                <div class="panel">
+                    <p>We're a diverse group of students from the MIT Emerging Talent program, passionate about using technology to solve real-world problems and create more inclusive financial systems.</p>
+                </div>
+
+                <!-- Team members grid -->
+                <div class="grid cols-3">
+                    <div class="card">
+                        <img src="resources/mukuna.jpg" alt="Mukuna Kabeya" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin: 0 auto 1rem; display:block;">
+                        <h3>Mukuna Kabeya</h3>
+                        <p class="muted">Role in research</p>
+                    </div>
+                    <div class="card">
+                        <img src="resources/elfadil.png" alt="Mohammed Elfadil" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin: 0 auto 1rem; display:block;">
+                        <h3>Mohammed Elfadil</h3>
+                        <p class="muted">Role in research</p>
+                    </div>
+                    <div class="card">
+                        <img src="resources/ozgur.jpg" alt="Ozgur" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin: 0 auto 1rem; display:block;">
+                        <h3>Ozgur</h3>
+                        <p class="muted">Role in research</p>
+                    </div>
+                    <div class="card">
+                        <img src="resources/hasan.png" alt="Hasan Zemzem" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin: 0 auto 1rem; display:block;">
+                        <h3>Hasan Zemzem</h3>
+                        <p class="muted">Role in research</p>
+                    </div>
+                    <div class="card">
+                        <img src="resources/lana.jpg" alt="Svitlana Musienko" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin: 0 auto 1rem; display:block;">
+                        <h3>Svitlana Musienko</h3>
+                        <p class="muted">Role in research</p>
+                    </div>
+                    <div class="card">
+                        <img src="resources/mohammad.jpg" alt="Mohammad Ziadah" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin: 0 auto 1rem; display:block;">
+                        <h3>Mohammad Ziadah</h3>
+                        <p class="muted">Role in research</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 9. CONTACT US -->
+        <section id="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="grid cols-2">
+                    <div class="panel">
+                        <h3>Interested in Our Research?</h3>
+                        <p>We'd love to hear from you! Whether you're:</p>
+                        <ul>
+                            <li>A researcher working on similar topics</li>
+                            <li>An organization serving migrant communities</li>
+                            <li>A policy maker interested in financial inclusion</li>
+                            <li>Someone with questions about our findings</li>
+                        </ul>
+                        <p>Feel free to reach out. We're always open to collaboration and discussion.</p>
+                    </div>
+                    <div class="panel">
+                        <form id="contact-form" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div>
+                                <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Name</label>
+                                <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; background: rgba(0,0,0,0.3); color: white; border-radius: 4px;">
+                            </div>
+                            <div>
+                                <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Email</label>
+                                <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; background: rgba(0,0,0,0.3); color: white; border-radius: 4px;">
+                            </div>
+                            <div>
+                                <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Subject</label>
+                                <input type="text" id="subject" name="subject" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; background: rgba(0,0,0,0.3); color: white; border-radius: 4px;">
+                            </div>
+                            <div>
+                                <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
+                                <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; background: rgba(0,0,0,0.3); color: white; border-radius: 4px; resize: vertical;"></textarea>
+                            </div>
+                            <button type="submit" class="btn" style="align-self: flex-start;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <div class="badge">Group 12 • MIT Emerging Talent</div>
+                <p class="muted" style="margin:.6rem 0 0">Research on blockchain technology and financial inclusion for migrants and refugees.</p>
+            </div>
+            <a class="btn" href="#top" aria-label="Back to top">Back to Top ↑</a>
+        </div>
+    </footer>
+
+    <script>
+        // Handle contact form submission
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+
+            // You can replace this with your API endpoint
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    this.reset();
+                } else {
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                }
+            } catch (error) {
+                alert('Sorry, there was an error sending your message. Please try again.');
+            }
+        });
+
+        // Enhance in-page anchor focus for accessibility
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(a => a.addEventListener('click', e => {
+            const id = a.getAttribute('href').slice(1);
+            const target = document.getElementById(id);
+            if (target) {
+                target.setAttribute('tabindex', '-1');
+                target.focus({
+                    preventScroll: true
+                });
+                setTimeout(() => target.removeAttribute('tabindex'), 600);
+            }
+        }));
+    </script>
+</body>
+
+</html>
