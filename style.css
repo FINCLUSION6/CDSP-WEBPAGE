@@ -323,13 +323,14 @@ ul li {
     padding-left: 1rem;
 }
 
-ul li::before {
+
+/* ul li::before {
     content: '₿';
     position: absolute;
     left: 0;
     color: var(--bitcoin-orange);
     font-weight: bold;
-}
+} */
 
 .panel {
     background: rgba(255, 255, 255, .8);
