@@ -683,4 +683,159 @@ html {
 }
 
 
+/* [Your existing CSS styles remain here...] */
+
+
+/* Added simple styles for graph placeholders */
+
+.graph-placeholder {
+    border: 2px dashed #3b82f6;
+    text-align: center;
+    color: #ccc;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* remove extra space */
+    overflow: hidden;
+    /* keeps image inside rounded corners */
+}
+
+.graph-placeholder img {
+    max-width: 100%;
+    /* don't overflow horizontally */
+    max-height: 100%;
+    /* don't overflow vertically */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* keeps aspect ratio and fits */
+}
+
+.graphs-placeholder img {
+    max-width: 100%;
+    /* don't overflow horizontally */
+    max-height: 100%;
+    /* don't overflow vertically */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* keeps aspect ratio and fits */
+}
+
+.graphe-placeholder img {
+    max-width: 100%;
+    /* don't overflow horizontally */
+    max-height: 100%;
+    /* don't overflow vertically */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* keeps aspect ratio and fits */
+}
+
+
+/* Increase height of adoption and pie chart only */
+
+#correlation-chart-placeholder img,
+#crypto-adoption-chart-placeholder img,
+#migrant-distribution-chart-placeholder img {
+    /* adjust as needed */
+    width: 330%;
+    height: 330%;
+    object-fit: contain;
+}
+
+
+/* --- Add these styles for the lightbox --- */
+
+
+/* The lightbox background (overlay) */
+
+.lightbox {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place, covering the viewport */
+    z-index: 1000;
+    /* Sit on top of all other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black semi-transparent background */
+    /* Use flexbox to center the image */
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* The image inside the lightbox */
+
+#lightbox-img {
+    display: block;
+    max-width: 85%;
+    max-height: 85vh;
+    /* Use viewport height to prevent overly large images */
+}
+
+
+/* The close button */
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox .close:hover {
+    color: #bbb;
+}
+
+
+/* Add a pointer cursor to expandable images */
+
+.expandable {
+    cursor: pointer;
+}
+
+
+/* Loading state for form */
+
+.form-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.success-message {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid #22c55e;
+    color: #22c55e;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    display: none;
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    display: none;
+}
+
+
 /* } */
