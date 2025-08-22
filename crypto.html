@@ -10,6 +10,145 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* [Your existing CSS styles remain here...] */
+        /* Added simple styles for graph placeholders */
+        
+        .graph-placeholder {
+            border: 2px dashed #3b82f6;
+            text-align: center;
+            color: #ccc;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            /* remove extra space */
+            overflow: hidden;
+            /* keeps image inside rounded corners */
+        }
+        
+        .graph-placeholder img {
+            max-width: 100%;
+            /* don't overflow horizontally */
+            max-height: 100%;
+            /* don't overflow vertically */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* keeps aspect ratio and fits */
+        }
+        
+        .graphs-placeholder img {
+            max-width: 100%;
+            /* don't overflow horizontally */
+            max-height: 100%;
+            /* don't overflow vertically */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* keeps aspect ratio and fits */
+        }
+        
+        .graphe-placeholder img {
+            max-width: 100%;
+            /* don't overflow horizontally */
+            max-height: 100%;
+            /* don't overflow vertically */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* keeps aspect ratio and fits */
+        }
+        /* Increase height of adoption and pie chart only */
+        
+        #correlation-chart-placeholder img,
+        #crypto-adoption-chart-placeholder img,
+        #migrant-distribution-chart-placeholder img {
+            /* adjust as needed */
+            width: 330%;
+            height: 330%;
+            object-fit: contain;
+        }
+        /* --- Add these styles for the lightbox --- */
+        /* The lightbox background (overlay) */
+        
+        .lightbox {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place, covering the viewport */
+            z-index: 1000;
+            /* Sit on top of all other content */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black semi-transparent background */
+            /* Use flexbox to center the image */
+            align-items: center;
+            justify-content: center;
+        }
+        /* The image inside the lightbox */
+        
+        #lightbox-img {
+            display: block;
+            max-width: 85%;
+            max-height: 85vh;
+            /* Use viewport height to prevent overly large images */
+        }
+        /* The close button */
+        
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .lightbox .close:hover {
+            color: #bbb;
+        }
+        /* Add a pointer cursor to expandable images */
+        
+        .expandable {
+            cursor: pointer;
+        }
+        /* Loading state for form */
+        
+        .form-loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .success-message {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid #22c55e;
+            color: #22c55e;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            color: #ef4444;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,14 +158,14 @@
         <div class="nav-wrap">
             <div class="brand">
                 <svg width="28" height="28" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="36" cy="36" r="30" stroke="url(#g1)" stroke-width="3"/>
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="72" y2="72">
-              <stop stop-color="#00D1FF"/>
-              <stop offset="1" stop-color="#3b82f6"/>
-            </linearGradient>
-          </defs>
-        </svg>
+                    <circle cx="36" cy="36" r="30" stroke="url(#g1)" stroke-width="3"/>
+                    <defs>
+                        <linearGradient id="g1" x1="0" y1="0" x2="72" y2="72">
+                            <stop stop-color="#00D1FF"/>
+                            <stop offset="1" stop-color="#3b82f6"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
                 <strong>Group 12</strong>
                 <span class="chip">MIT Emerging Talent</span>
             </div>
@@ -34,6 +173,7 @@
                 <a href="#problem">The Problem</a>
                 <a href="#research">Our Research</a>
                 <a href="#results">Key Findings</a>
+                <a href="#visuals">Visualizations</a>
                 <a href="#implications">What This Means</a>
                 <a href="#next-steps">Next Steps</a>
                 <a href="#team">Our Team</a>
@@ -44,25 +184,24 @@
 
     <header class="hero">
         <svg class="mesh" viewBox="0 0 1200 500" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="wire" x1="0" x2="1">
-          <stop offset="0%" stop-color="#00d1ff" stop-opacity=".45"/>
-          <stop offset="100%" stop-color="#3b82f6" stop-opacity=".45"/>
-        </linearGradient>
-      </defs>
-      <!-- Stylized blockchain network -->
-      <g stroke="url(#wire)" stroke-width="1.2">
-        <path d="M0,360 C200,300 350,430 550,360 C760,285 980,400 1200,340" fill="none"/>
-        <path d="M0,260 C210,200 340,310 550,260 C770,210 980,300 1200,260" fill="none"/>
-        <path d="M0,160 C220,120 360,190 560,160 C790,125 990,200 1200,180" fill="none"/>
-      </g>
-      <g fill="#00d1ff" opacity=".7">
-        <circle cx="180" cy="255" r="3"/>
-        <circle cx="420" cy="210" r="3"/>
-        <circle cx="700" cy="235" r="3"/>
-        <circle cx="980" cy="210" r="3"/>
-      </g>
-    </svg>
+            <defs>
+                <linearGradient id="wire" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#00d1ff" stop-opacity=".45"/>
+                    <stop offset="100%" stop-color="#3b82f6" stop-opacity=".45"/>
+                </linearGradient>
+            </defs>
+            <g stroke="url(#wire)" stroke-width="1.2">
+                <path d="M0,360 C200,300 350,430 550,360 C760,285 980,400 1200,340" fill="none"/>
+                <path d="M0,260 C210,200 340,310 550,260 C770,210 980,300 1200,260" fill="none"/>
+                <path d="M0,160 C220,120 360,190 560,160 C790,125 990,200 1200,180" fill="none"/>
+            </g>
+            <g fill="#00d1ff" opacity=".7">
+                <circle cx="180" cy="255" r="3"/>
+                <circle cx="420" cy="210" r="3"/>
+                <circle cx="700" cy="235" r="3"/>
+                <circle cx="980" cy="210" r="3"/>
+            </g>
+        </svg>
         <div class="container">
             <span class="badge">Blockchain Research • Financial Inclusion</span>
             <h1 class="title neon-text">Can Blockchain Help Migrants Access Banking?</h1>
@@ -75,7 +214,6 @@
     </header>
 
     <main>
-        <!-- 1. THE PROBLEM -->
         <section id="problem">
             <div class="container">
                 <h2>The Challenge: Financial Exclusion of Migrants</h2>
@@ -107,7 +245,6 @@
             </div>
         </section>
 
-        <!-- 2. OUR RESEARCH QUESTION -->
         <section id="research">
             <div class="container">
                 <div class="panel">
@@ -120,7 +257,6 @@
             </div>
         </section>
 
-        <!-- 3. HOW WE STUDIED THIS -->
         <section id="approach">
             <div class="container">
                 <h2>How We Studied This</h2>
@@ -141,48 +277,69 @@
             </div>
         </section>
 
-        <!-- 5. KEY FINDINGS -->
         <section id="results">
             <div class="container">
                 <h2>What We Discovered</h2>
 
-                <!-- The Main Finding -->
                 <div class="panel" style="margin-bottom: 2rem;">
                     <h3 class="neon-text">Our Key Discovery</h3>
-                    <p style="font-size: 1.1em;">We found a <strong>moderate connection</strong> between areas with more migrants and higher cryptocurrency usage. This suggests that migrants may indeed be turning to digital currencies when traditional banks don't serve them well.</p>
+                    <p style="font-size: 1.1em;">We found a <strong>moderate connection</strong> between areas with more migrants and higher cryptocurrency usage, especially after accounting for regions with highly developed banking systems. This suggests that migrants may indeed
+                        be turning to digital currencies when traditional banks don't serve them well.</p>
                 </div>
 
-                <!-- Regional Patterns -->
                 <div class="grid cols-2">
                     <div class="panel">
-                        <h3>Where Crypto is Popular</h3>
-                        <ul>
-                            <li><strong>Sub-Saharan Africa:</strong> Many people use crypto for daily transactions</li>
-                            <li><strong>Central & Southern Asia:</strong> Growing use of digital money</li>
-                            <li><strong>Latin America:</strong> Strong adoption of alternatives to traditional banking</li>
-                        </ul>
-                        <p class="muted">These areas often have limited access to traditional banks.</p>
+                        <h3>Regional Crypto Adoption Trends</h3>
+                        <p>Some regions consistently lead in crypto adoption. The chart below shows the average adoption score by region over the past three years. A higher score means higher adoption.</p>
+                        <div id="crypto-adoption-chart-placeholder" class="graphs-placeholder">
+                            <img src="analysis/adoption.png" alt="Crypto adoption by region" class="expandable">
+                        </div>
                     </div>
                     <div class="panel">
-                        <h3>Where Most Migrants Live</h3>
-                        <ul>
-                            <li><strong>North America:</strong> Major destination for migrants</li>
-                            <li><strong>Western Europe:</strong> Large migrant communities</li>
-                            <li><strong>Southern Asia:</strong> Both people leaving and arriving</li>
-                        </ul>
-                        <p class="muted">These regions generally have well-established banking systems.</p>
+                        <h3>Global Migrant Distribution</h3>
+                        <p>The global migrant population is concentrated in a few key regions. This pie chart illustrates the share of the world's migrant stock for each area in 2024.</p>
+                        <div id="migrant-distribution-chart-placeholder" class="graphe-placeholder">
+                            <img src="analysis/pie.png" alt="Migrant distribution pie chart" class="expandable">
+                        </div>
                     </div>
                 </div>
 
-                <!-- Why This Pattern Matters -->
                 <div class="panel" style="margin-top: 2rem;">
-                    <h3>Why This Pattern Makes Sense</h3>
-                    <p>When we looked deeper, we found that the connection between migrants and crypto use is strongest in places where traditional banking is less available. This suggests people are using cryptocurrency to fill gaps in financial services.</p>
+                    <h3>Connecting Migration and Crypto Adoption</h3>
+                    <p>When we plotted migrant populations against crypto adoption scores for 2024, a clear pattern emerged. The graph below compares the migrant stock (blue bars) with the crypto adoption score (teal line). Regions are ordered by their migrant
+                        population size.</p>
+                    <div id="correlation-chart-placeholder" class="graph-placeholder">
+                        <img src="analysis/cryvsmi.png" alt="Crypto adoption compared to migrant population" class="expandable">
+                    </div>
+                    <p>While regions like North America and Western Europe have the largest migrant populations, their crypto adoption scores are moderate. In contrast, regions like Sub-Saharan Africa and Southern Asia show high adoption scores relative
+                        to their migrant populations, suggesting crypto is filling a need where traditional banking is less accessible.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 6. WHAT THIS MEANS -->
+        <section id="visuals">
+            <div class="container">
+                <h2>Data Visualizations in Detail</h2>
+                <div class="panel">
+                    <h3>Adoption vs. Migrant Stock (Top 50 Countries)</h3>
+                    <p>This chart narrows the focus to only the top 50 countries with a crypto adoption score over 0.5. It helps clarify the relationship in high-adoption areas, including North America, showing that even in developed regions, there's a notable
+                        overlap.
+                    </p>
+                    <div id="filtered-correlation-chart-placeholder" class="graph-placeholder">
+                        <img src="analysis/top50.png" alt="Top 50 countries adoption vs migrant stock" class="expandable">
+                    </div>
+                </div>
+                <div class="panel" style="margin-top: 2rem;">
+                    <h3>Country-Level Adoption Scores by Region (2024)</h3>
+                    <p>This visualization breaks down the regional averages and shows the adoption score for every country. Each dot is a country. This reveals the diversity of adoption within regions—some are very consistent, while others have wide disparities.</p>
+                    <div id="stripplot-chart-placeholder" class="graph-placeholder">
+                        <img src="analysis/distri.png" alt="Distribution of crypto adoption scores by country and region" class="expandable">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <section id="implications">
             <div class="container">
                 <h2>What This Means for Real People</h2>
@@ -216,7 +373,6 @@
             </div>
         </section>
 
-        <!-- 7. NEXT STEPS -->
         <section id="next-steps">
             <div class="container">
                 <h2>What Comes Next</h2>
@@ -260,7 +416,6 @@
             </div>
         </section>
 
-        <!-- 8. MEET OUR TEAM -->
         <section id="team">
             <div class="container">
                 <h2>Meet Our Research Team</h2>
@@ -268,7 +423,6 @@
                     <p>We're a diverse group of students from the MIT Emerging Talent program, passionate about using technology to solve real-world problems and create more inclusive financial systems.</p>
                 </div>
 
-                <!-- Team members grid -->
                 <div class="grid cols-3">
                     <div class="card">
                         <img src="resources/mukuna.jpg" alt="Mukuna Kabeya" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin: 0 auto 1rem; display:block;">
@@ -304,8 +458,6 @@
             </div>
         </section>
 
-
-        <!-- 9. CONTACT US -->
         <section id="contact">
             <div class="container">
                 <h2>Get In Touch</h2>
@@ -332,19 +484,29 @@
                                 <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; background: rgba(0,0,0,0.3); color: white; border-radius: 4px;">
                             </div>
                             <div>
-                                <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Subject</label>
-                                <input type="text" id="subject" name="subject" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; background: rgba(0,0,0,0.3); color: white; border-radius: 4px;">
+                                <label for="title" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Subject</label>
+                                <input type="text" id="title" name="title" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; background: rgba(0,0,0,0.3); color: white; border-radius: 4px;">
                             </div>
                             <div>
                                 <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
                                 <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; background: rgba(0,0,0,0.3); color: white; border-radius: 4px; resize: vertical;"></textarea>
                             </div>
-                            <button type="submit" class="btn" style="align-self: flex-start;">Send Message</button>
+                            <button type="submit" class="btn" style="align-self: flex-start;">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading" style="display: none;">Sending...</span>
+                            </button>
                         </form>
+                        <div class="success-message" id="success-message">
+                            ✅ Message sent successfully! Thank you for reaching out.
+                        </div>
+                        <div class="error-message" id="error-message">
+                            ❌ Failed to send message. Please try again or contact us directly.
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer>
@@ -357,40 +519,12 @@
         </div>
     </footer>
 
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded chart">
+    </div>
+
     <script>
-        // Handle contact form submission
-        document.getElementById('contact-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
-
-            // You can replace this with your API endpoint
-            try {
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    alert('Thank you for your message! We\'ll get back to you soon.');
-                    this.reset();
-                } else {
-                    alert('Sorry, there was an error sending your message. Please try again.');
-                }
-            } catch (error) {
-                alert('Sorry, there was an error sending your message. Please try again.');
-            }
-        });
-
         // Enhance in-page anchor focus for accessibility
         const links = document.querySelectorAll('a[href^="#"]');
         links.forEach(a => a.addEventListener('click', e => {
@@ -404,7 +538,90 @@
                 setTimeout(() => target.removeAttribute('tabindex'), 600);
             }
         }));
+
+        // Lightbox script for expanding images
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox .close');
+
+        document.querySelectorAll('.expandable').forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
     </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "yo5Y0OtzXuUEDmYC3", // Replace with your EmailJS public key
+            });
+        })();
+    </script>
+
+    <script type="text/javascript">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Show loading state
+            form.classList.add('form-loading');
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+
+            // Get form data
+            const templateParams = {
+                name: form.name.value,
+                email: form.email.value,
+                title: form.title.value,
+                message: form.message.value
+            };
+
+            // Send email using EmailJS with the correct template parameters
+            emailjs.send('service_8ym3e4v', 'template_sjbpote', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    successMessage.style.display = 'block';
+                    form.reset(); // Reset form
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    errorMessage.style.display = 'block';
+                })
+                .finally(function() {
+                    // Reset loading state
+                    form.classList.remove('form-loading');
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+
 </body>
 
 </html>
